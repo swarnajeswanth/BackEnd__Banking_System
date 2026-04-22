@@ -1,6 +1,7 @@
-const User=require("../models/user.model");
+const User=require("../model/UserSchema");
 const jwt=require("jsonwebtoken");
 const Register=async(req,res)=>{
+        
         const {name,email,password}=req.body;
 
         if(!name || !email || !password){
@@ -19,7 +20,7 @@ const Register=async(req,res)=>{
             name:user.name,
             email:user.email,
         },
-        token=token
+        token
     });
 }
 
@@ -43,7 +44,7 @@ const Login=async(req,res)=>{
         name:user.name,
         email:user.email,
     },
-    token=token
+    token:token
 });
 }
 
